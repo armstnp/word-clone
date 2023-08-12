@@ -40,6 +40,14 @@ button {
   color: inherit;
 }
 
+button.restart {
+  border: 1px solid white;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -77,14 +85,14 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: var(--game-spacing);
-  padding: var(--game-spacing) 32px;
+  padding: var(--game-spacing) 0px;
   margin: 0 auto;
   min-width: 250px;
   max-width: min(500px, 58vh, 100%);
 }
 
 .guess-results {
-  flex: 1;
+  flex: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,6 +167,46 @@ h1 {
   border-radius: 4px;
   padding: 8px 16px;
   outline-offset: 4px;
+}
+
+.keyboard .letter {
+  font-weight: bold;
+}
+
+.keyboard .row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.keyboard .letter {
+  position: relative;
+  width: 10%;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
+.letter.correct {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+.letter.incorrect {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+  color: white;
+}
+.letter.misplaced {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+}
+.letter.unused {
+  background: var(--color-gray-900);
+  border-color: var(--color-gray-900);
+  color: black;
 }
 
 .banner {
